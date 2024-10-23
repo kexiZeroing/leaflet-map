@@ -1,5 +1,11 @@
 # Develop interactive maps
 
+Watch the video [FREE maps for any app](https://www.youtube.com/watch?v=UAQogFwyna0):
+1. Browser load JS library to display map.
+2. Tiles or vectors are requested by JS library based on what part of the map the user is viewing.
+3. Tiles are rendered onto the page as images or vectors are drawn to a canvas.
+4. Repeat step 2 and 3 as the user zooms/pans around the map.
+
 ## Leaflet
 [Leaflet](https://leafletjs.com) is an open-source JavaScript library for creating interactive maps. Leaflet itself doesn't provide map data; it's a tool for displaying and interacting with maps.
 
@@ -16,6 +22,9 @@ While Leaflet can work with various tile providers, OSM is commonly used as the 
 
 Maps are divided into a grid of small images called tiles. This system allows for efficient loading and displaying of large maps. Leaflet only loads the tiles visible in the current viewport, plus some extras for smooth panning. As you move around or zoom, it requests new tiles as needed.
 
+- Raster tiles: https://wiki.openstreetmap.org/wiki/Raster_tile_providers
+- Vector tiles: https://wiki.openstreetmap.org/wiki/Vector_tiles
+
 ## OpenLayers
 Alternatively to Leaflet, [OpenLayers](https://openlayers.org) is an open-source JavaScript library for creating interactive maps on web pages. It can display map tiles, vector data and markers loaded from any source. OpenLayers provides more advanced map controls, such as support for vector layers and advanced styling options. OpenLayers also provides support for 3D maps and it’s often used in more complex GIS applications.
 
@@ -25,12 +34,12 @@ Mapbox provides map services and technology - one of those services, Map tiles, 
 ## The relationship between them
 There's a lot of Map things and it's very unclear how they all fit together without prior experience.
 
-- OpenStreetMap (OSM) is a community-driven, fully open and usable data library. It's a database of everything you need to make map. They also have a website that renders that map, but it's not commercially usable.
+- OpenStreetMap (OSM) is a community-driven, fully open and usable data library. It's a database of everything you need to make map.
 
-- OpenFreeMap lets you display custom maps on your website and apps for free. The map data comes from OpenStreetMap. Attribution is required. If you are using MapLibre, they are automatically added, you have nothing to do.
+- OpenFreeMap lets you display custom maps on your website and apps for free *(It provides a vector tile API with an OpenMapTiles schema for free.)* The map data comes from OpenStreetMap. Attribution is required. If you are using MapLibre, they are automatically added, you have nothing to do. https://openfreemap.org
 
 - Mapbox is one of the first companies to take OSM's dataset and commercialize it. Along the way they created a lot of the wildly used mapping libraries, including renders, data formats, and styling tools. Mapbox GL is a completely new implementation of a mapping library written in WebGL (should perform better).
 
-- MapLibre GL JS is a TypeScript library that uses WebGL to render interactive maps from vector tiles in a browser. It originated as an open-source fork of mapbox-gl-js. The library's initial versions were intended to be a drop-in replacement for the Mapbox’s OSS version (1.x) with additional functionality, but have evolved a lot since then.
+- MapLibre GL JS is a TypeScript library that uses WebGL to render interactive maps from vector tiles in a browser. It originated as an open-source fork of mapbox-gl-js. The library's initial versions were intended to be a drop-in replacement for the Mapbox’s OSS version. MapLibre, stands as an abbreviation for **Map lib**rary **re**started (or **re**invented). https://www.maptiler.com/news/2021/01/maplibre-mapbox-gl-open-source-fork/
 
 - OpenLayers and Leaflet are both alternative, open source renderers with various levels of capabilities.

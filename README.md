@@ -21,3 +21,16 @@ Alternatively to Leaflet, [OpenLayers](https://openlayers.org) is an open-source
 
 ## Mapbox GL JS
 Mapbox provides map services and technology - one of those services, Map tiles, can be used in Leaflet as base maps. Mapbox also develops their own open-source GIS library for the browse called [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/guides). One of the key differences now between them is that Mapbox GL JS uses WebGL whereas Leaflet does not. WebGL, for mapping, is much faster in rendering computationally heavy things. It is widely used for creating maps for web applications and data visualization.
+
+## The relationship between them
+There's a lot of Map things and it's very unclear how they all fit together without prior experience.
+
+- OpenStreetMap (OSM) is a community-driven, fully open and usable data library. It's a database of everything you need to make map. They also have a website that renders that map, but it's not commercially usable.
+
+- OpenFreeMap lets you display custom maps on your website and apps for free. The map data comes from OpenStreetMap. Attribution is required. If you are using MapLibre, they are automatically added, you have nothing to do.
+
+- Mapbox is one of the first companies to take OSM's dataset and commercialize it. Along the way they created a lot of the wildly used mapping libraries, including renders, data formats, and styling tools. Mapbox GL is a completely new implementation of a mapping library written in WebGL (should perform better).
+
+- MapLibre GL JS is a TypeScript library that uses WebGL to render interactive maps from vector tiles in a browser. It originated as an open-source fork of mapbox-gl-js. The library's initial versions were intended to be a drop-in replacement for the Mapbox’s OSS version (1.x) with additional functionality, but have evolved a lot since then.
+
+- OpenLayers and Leaflet are both alternative, open source renderers with various levels of capabilities.
